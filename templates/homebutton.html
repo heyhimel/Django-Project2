@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'homebutton.css' %}">
+</head>
+<body>
+    <div class="">
+        {% load static %}
+        <img class="mySlides" src="{% static 'ruet.jpg'%}" style="width:100%">
+        <img class="mySlides" src="{% static 'Hall.jpg'%}" style="width:100%">
+        <img class="mySlides" src="{% static 'cseruet.jpeg'%}" style="width:100%">
+        <!--<img class="mySlides" src="{% static 'deptcse.jpg'%}" style="width:100%">-->
+        <img class="mySlides" src="{% static 'convocation.jpg'%}" style="width:100%">
+    </div>
+
+    <script>
+        var myIndex = 0;
+        carousel();
+        
+        function carousel() {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+          }
+          myIndex++;
+          if (myIndex > x.length) {myIndex = 1}    
+          x[myIndex-1].style.display = "block";  
+          setTimeout(carousel, 2000); // Change image every 2 seconds
+        }
+    </script>
+
+    <button class="button-1" role="button" onclick="window.location.href='http://127.0.0.1:8000/studentsite/';">
+        <h2>As Student</h2>
+    </button>
+    <button class="button-2" role="button" onclick="window.location.href='http://127.0.0.1:8000/teacher/login/';">
+        <h2>As Authority</h2>
+    </button>
+    <!--
+        <button class="button-3" role="button" onclick="window.location.href='http://127.0.0.1:8000/admin/';">
+        <h2>Site Admin</h2>
+        site admin pass:1803149,id:ruet
+    </button>
+    -->
+</body>
+</html>
+
+
